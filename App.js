@@ -1,19 +1,38 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './components/header';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      todoInput: '',
+      todos: [
+        {id: 0, title:'Take out the trash', done: false },
+        {id: 1, title:'Cook Dinner', done: false }
+      ]
+    }
+  }
+
+  
+  render() {
+    return (
+      <View style={styles.container}>
+        <Header title="To Do App" />
+      </View>
+      
+    );
+  }
+  
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  header: {
+    color: '#171717'
+  }
 });
